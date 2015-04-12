@@ -1,0 +1,47 @@
+<!doctype html>
+<html ng-app>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<script src="components/loader.js"></script>
+<link rel="stylesheet" href="components/loader.css">
+<link rel="stylesheet" href="css/style.css">
+
+<title>HotPans</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js">
+</script>
+<script src="hotpans.js"></script>
+</head>
+
+<body>
+	<h1>HotPansプロトタイプ</h1>
+	<strong>焼き立てのパンを登録してください。</strong>
+	<form ng-controller="AddBreadController">
+		<ul>
+			<li>焼きあがったパンの名前: <input type="text" ng-model="bread.breadName" name="breadName" /></li>
+			<li>焼きあがったパンの価格: <input type="text" ng-model="bread.price" name="price" />円
+			</li>
+		</ul>
+		<button ng-click="addBread()">登録</button>
+	</form>
+	<hr />
+	<p>
+		<strong>焼き立てパンの一覧</strong>
+	</p>
+
+	<table border="1" ng-controller="HotPansController">
+		<tr bgcolor=lightgreen>
+			<th nowrap width=30>#</th>
+			<th nowrap width=200>パンの名前</th>
+			<th nowrap width=80>価格</th>
+		</tr>
+		<tr ng-repeat="bread in breads">
+			<td align="center">{{bread.id}}</td>
+			<td>{{bread.breadName}}</td>
+			<td align="center">{{bread.price}}円</td>
+		</tr>
+	</table>
+</body>
+</html>
