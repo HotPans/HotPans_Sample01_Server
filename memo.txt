@@ -1,0 +1,2 @@
+curl http://localhost:8080/api/breads -v -X POST -H "Content-Type: application/json" -d "{\"breadName\" : \"test\", \"price\" : 100 }"
+curl http://localhost:8080/api/breads -v -X POST -H "Content-Type: application/json" -d "{\"breadName\" : \"シュークリーム\", \"price\" : 170 }"
